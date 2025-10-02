@@ -3,49 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/icecream.png" />
+
     <title>Ice Cream Order</title>
   </head>
   <body>
+    <img
+      src="images/icecreambr.png"
+      alt="picture of ice cream"
+      style="float: right"
+    />
+    <img
+      src="images/icecreamcup.png"
+      alt="picture of ice cream"
+      style="float: left"
+    />
     <main>
       <h1>Ice Cream Order Form</h1>
-      <form action="">
+      <form id="icecream-form" action="#" method="get">
         <fieldset>
           <legend>Personal Information</legend>
-          <label for="Fname">Name</label>
-          <input type="text" name="" id="" />
-          <label for="email">Email</label>
-          <input type="email" name="" id="" />
+          <label for="fname">Name:</label>
+          <input type="text" name="fname" id="fname" /><br />
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
         </fieldset>
         <fieldset>
           <legend>Order Details</legend>
-          <label for="Fname">Choose your flavor:</label>
-          <input type="text" name="" id="" />
+          <label for="flavor">Choose your flavor:</label>
+          <select name="flavor" id="flavor">
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="cookies">Cookies and Cream</option>
+          </select>
+          <br /><br />
 
-          <label for="wafflecone">Waffle Cone</label>
+          <label>Choose your cone:</label><br />
           <input type="radio" id="wafflecone" name="cone" value="wafflecone" />
-          <label for="sugarcone">Sugar Cone</label>
+          <label for="wafflecone">Waffle Cone</label>
           <input type="radio" id="sugarcone" name="cone" value="sugarcone" />
-          <label for="cup">Cup</label>
+          <label for="sugarcone">Sugar Cone</label>
           <input type="radio" id="cup" name="cone" value="cup" />
-          <br />
+          <label for="cup">Cup</label><br /><br />
 
-          <label for="Fname">Toppings:</label>
+          <label for="toppings">Toppings:</label><br />
           <input
             type="checkbox"
-            id="sprinkes"
+            id="sprinkles"
             name="toppings[]"
-            value="sprinkes"
+            value="sprinkles"
           />
-          <label for="nuts">Sprinkles</label>
-            <input type="checkbox" id="nuts" name="toppings[]" value="nuts" />
+          <label for="sprinkles">Sprinkles</label>
+          <input type="checkbox" id="nuts" name="toppings[]" value="nuts" />
           <label for="nuts">Nuts</label>
-
-          <label for="comment">Additional Comments:</label>
-          <textarea name="" id=""></textarea>
+          <input type="checkbox" id="cherry" name="toppings[]" value="cherry" />
+          <label for="cherry">Cherry</label>
+          <input type="checkbox" id="cream" name="toppings[]" value="cream" />
+          <label for="cream">Whipped Cream</label>
+          <br /><br />
+          <label for="comment">Additional Comments:</label> <br />
+          <textarea name="comment" id="comment" rows="4" cols="50"></textarea>
         </fieldset>
-        <button>Submit Order</button>
+        <button type="submit">Submit Order</button>
       </form>
     </main>
   </body>
