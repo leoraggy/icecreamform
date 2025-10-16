@@ -49,3 +49,8 @@ textarea {
   width: 100%;
   margin-bottom: 1rem;
 }
+
+.error {
+  color: red;
+  display: none;
+}

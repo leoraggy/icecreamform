@@ -10,6 +10,8 @@
     <!-- Favicon -->
     <link rel="icon" href="images/icecream.png" />
 
+    <script src="js/ice-cream.js" defer></script>
+
     <title>Ice Cream Order</title>
   </head>
   <body>
@@ -29,19 +31,24 @@
         <fieldset>
           <legend>Personal Information</legend>
           <label for="fname">Name:</label>
+          <span id="err-fname" class="error">Please input a name.</span>
           <input type="text" name="fname" id="fname" /><br />
           <label for="email">Email:</label>
+          <span id="err-email" class="error">Please input a valid email.</span>
           <input type="email" name="email" id="email" />
         </fieldset>
         <fieldset>
           <legend>Order Details</legend>
           <label for="flavor">Choose your flavor:</label>
           <select name="flavor" id="flavor">
+            <option value="none">Select a flavor</option>
             <option value="vanilla">Vanilla</option>
             <option value="chocolate">Chocolate</option>
             <option value="strawberry">Strawberry</option>
             <option value="cookies">Cookies and Cream</option>
           </select>
+          <span id="err-flavor" class="error">Please select a flavor.</span>
+
           <br /><br />
 
           <label>Choose your cone:</label><br />
@@ -51,6 +58,7 @@
           <label for="sugarcone">Sugar Cone</label>
           <input type="radio" id="cup" name="cone" value="cup" />
           <label for="cup">Cup</label><br /><br />
+          <span id="err-cone" class="error">Please select a Cone.</span>
 
           <label for="toppings">Toppings:</label><br />
           <input
