@@ -16,9 +16,14 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.post("/submit-order", (req, res) => {
+  const order = req.body;
+  res.render("confirm", { order });
+});
+
 app.get("/confirm", (req, res) => {
-  res.render('confirm');
-})
+  res.render("confirm");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
