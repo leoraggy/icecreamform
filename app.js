@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit-order", (req, res) => {
   const order = req.body;
-  orders.push;
+  orders.push(order);
   res.render("confirm", { order });
   // res.json(order);
 });
