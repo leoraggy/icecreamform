@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Confirmation</title>
     <link rel="stylesheet" href="styles/confirm.css" />
+        <!-- Favicon -->
+    <link rel="icon" href="images/icecream.png" />
   </head>
   <body>
     <main class="main-body">
       <form>
-        <div>
-          <img href="#" />
-          <h2>Thank you for your order!</h2>
+        <div class="image">
+          <img
+            src="images/checkmark.png"
+            alt="picture of checkmark"
+            width="100"
+          />
+        </div>
+
+        <div class="heading-container">
+          <h1>Thank You for Your Order!</h2>
           <p>Your ice cream order has been confirmed!</p>
         </div>
 
@@ -32,8 +41,8 @@
         </div>
         <div><h4>Additional Information</h4></div>
         <div class="button-section">
-          <button>Print order</button>
-          <button>Place another order</button>
+          <button id="print-button">Print Order</button>
+           <button id="place-button">Place Another Order</button>
         </div>
       </form>
     </main>
