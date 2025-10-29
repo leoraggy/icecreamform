@@ -4,7 +4,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 
-const PORT = 3001;
+const PORT = 3004;
 
 app.use(express.static("public"));
 
