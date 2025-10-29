@@ -37,6 +37,11 @@
           <p>Flavor: <%= order.flavor %></p>
           <p>Cone Type: <%= order.cone %></p>
           <p>Toppings</p>
+          <ul>
+            <% order.toppings.forEach(order => { %>
+              <li><%= order %></li>
+           <% }) %>
+          </ul>
         </div>
         <div><h4>Additional Comments</h4><p><%= order.comment %></p></div>
         <div class="button-section">
