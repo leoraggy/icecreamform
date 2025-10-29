@@ -54,3 +54,8 @@ textarea {
   color: red;
   display: none;
 }
+
+.admin_link {
+  display: block;
+  text-align: center;
+}

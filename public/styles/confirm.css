@@ -49,3 +49,8 @@ form {
   text-align: center;
   text-decoration: none;
 }
+
+.admin_link {
+  display: block;
+  text-align: center;
+}
