@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS ice_cream_db;
+
+USE ice_cream_db;
+
+CREATE TABLE orders (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    customer VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    flavor VARCHAR(50) NOT NULL,
+    cone VARCHAR(50) NOT NULL,
+    toppings VARCHAR(50) NOT NULL,
+    order_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO orders(customer,email,flavor,cone,toppings)
+VALUES ('Superman', 'ckent@msn.com', 'vanilla', 'cup', 'nuts, cherry');
