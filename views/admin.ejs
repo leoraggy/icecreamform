@@ -34,8 +34,8 @@
       <tbody>
         <% orders.forEach(order => { %>
         <tr>
-          <td><%= order.time.toLocaleString() %></td>
-          <td><%= order.fname %> <%= order.lname %></td>
+          <td><%= order.order_timestamp.toLocaleString() %></td>
+          <td><%= order.customer %></td>
           <td><%= order.email %></td>
           <td><%= order.flavor %></td>
           <td><%= order.cone %></td>
