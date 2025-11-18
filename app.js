@@ -2,17 +2,17 @@ import express from "express";
 import mysql2 from "mysql2";
 import dotenv from "dotenv";
 
-dotenv.confirg();
+dotenv.config();
 
-const pool = mysql2.createPool({
+const pool = mysql2
+  .createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
-}).promise();
-
-
+    port: process.env.DB_PORT,
+  })
+  .promise();
 
 const app = express();
 
@@ -43,15 +43,15 @@ app.post("/submit-order", (req, res) => {
   // res.json(order);
 });
 
-app.get('db-test', async(req,res) => {
-  try{
-    const [orders] = await pool.query('Select * from orders');
-    res.send(orders)
-  } catch (err){
-    console.error('Database Error:', err);
-    res.status(500).send('Database error' + err.message);
-  } 
-})
+app.get("/db-test", async (req, res) => {
+  try {
+    const [orders] = await pool.query("Select * from orders");
+    res.send(orders);
+  } catch (err) {
+    console.error("Database Error:", err);
+    res.status(500).send("Database error" + err.message);
+  }
+});
 
 app.get("/confirm", (req, res) => {
   res.render("confirm");
