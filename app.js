@@ -2,7 +2,7 @@ import express from "express";
 import mysql2 from "mysql2";
 import dotenv from "dotenv";
 
-dotenv.confirg();
+dotenv.config();
 
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
@@ -43,7 +43,7 @@ app.post("/submit-order", (req, res) => {
   // res.json(order);
 });
 
-app.get('db-test', async(req,res) => {
+app.get('/db-test', async(req,res) => {
   try{
     const [orders] = await pool.query('Select * from orders');
     res.send(orders)
