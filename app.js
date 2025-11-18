@@ -53,12 +53,44 @@ app.get("/db-test", async (req, res) => {
   }
 });
 
-app.get("/confirm", (req, res) => {
-  res.render("confirm");
+app.post("/confirm", async (req, res) => {
+  try {
+    const order = req.body;
+
+    console.log("New order submitted:", order);
+
+    order.toppings = Array.isArray(order.toppings)
+      ? order.toppings.join(",")
+      : "";
+
+    const sql = `INSERT INTO orders(customer,email, flavor, cone, toppings)
+    VALUES (?,?,?,?,?)`;
+
+    const params = Object.values(order);
+    const [result] = await pool.execute(sql, params);
+    console.log("Order saved with ID:", result.insertId);
+
+    res.render("confirm", { order });
+  } catch (error) {
+    console.error("Error saving orders:", error);
+    res
+      .status(500)
+      .send(
+        "Sorry, there was an error processing your order. Please try again"
+      );
+  }
 });
 
-app.get("/admin", (req, res) => {
-  res.render("admin", { orders });
+app.get("/admin", async (req, res) => {
+  try {
+    const [orders] = await pool.query(
+      "Select * from orders ORDER BY timestamp DESC"
+    );
+    res.render("admin", { orders });
+  } catch (err) {
+    console.error("Database Error:", err);
+    res.status(500).send("Database error" + err.message);
+  }
 });
 
 app.listen(PORT, () => {
