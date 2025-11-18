@@ -43,14 +43,18 @@ app.post("/submit-order", (req, res) => {
   // res.json(order);
 });
 
-app.get("/db-test", async (req, res) => {
-  try {
-    const [orders] = await pool.query("Select * from orders");
-    res.send(orders);
-  } catch (err) {
-    console.error("Database Error:", err);
-    res.status(500).send("Database error" + err.message);
-  }
+app.get('/db-test', async(req,res) => {
+  try{
+    const [orders] = await pool.query('Select * from orders');
+    res.send(orders)
+  } catch (err){
+    console.error('Database Error:', err);
+    res.status(500).send('Database error' + err.message);
+  } 
+})
+
+app.get("/confirm", (req, res) => {
+  res.render("confirm");
 });
 
 app.post("/confirm", async (req, res) => {
